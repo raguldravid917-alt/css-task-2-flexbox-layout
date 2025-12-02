@@ -13,8 +13,11 @@ You must create:
 
 📁 Project Structure
 
-```bash
 css-task-2-flexbox-layout/
 │
 ├── index.html
 └── style.css
+
+> Author   
+> Name: Ragul Dravid S  
+> GitHub: "https://github.com/raguldravid917-alt"
