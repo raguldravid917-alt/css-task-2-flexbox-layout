@@ -1,0 +1,230 @@
+/* Global reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Navbar ---------- */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  background: #020617;
+  border-bottom: 1px solid #1f2937;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #e5e7eb;
+}
+
+.nav-links {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #9ca3af;
+  font-size: 0.95rem;
+  transition: color 0.2s ease, transform 0.1s ease;
+}
+
+.nav-links a:hover {
+  color: #f9fafb;
+  transform: translateY(-1px);
+}
+
+.nav-button {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: none;
+  background: #22c55e;
+  color: #022c22;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: transform 0.1s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.nav-button:hover {
+  background: #16a34a;
+  box-shadow: 0 8px 20px rgba(22, 163, 74, 0.45);
+  transform: translateY(-1px);
+}
+
+.nav-button:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Mobile toggle (just for show, no JS) */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid #4b5563;
+  border-radius: 6px;
+  color: #e5e7eb;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+/* ---------- Main Container ---------- */
+
+.container {
+  flex: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+}
+
+.page-title {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.page-subtitle {
+  font-size: 0.95rem;
+  color: #9ca3af;
+  margin-bottom: 24px;
+}
+
+/* ---------- Card Grid (Flexbox) ---------- */
+
+.card-grid {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* Equal-height cards */
+.card {
+  flex: 1 1 260px;          /* grow, shrink, basis */
+  background: #020617;
+  border-radius: 14px;
+  padding: 16px 14px 18px;
+  border: 1px solid #1f2937;
+  display: flex;
+  flex-direction: column;   /* to push button to bottom */
+  gap: 10px;
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  line-height: 1.4;
+}
+
+/* pushes button to bottom so heights match */
+.card-btn {
+  margin-top: auto;
+  align-self: flex-start;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: none;
+  background: #3b82f6;
+  color: #e5e7eb;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.card-btn:hover {
+  background: #2563eb;
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.4);
+  transform: translateY(-1px);
+}
+
+.card-btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* ---------- Footer (Responsive Flexbox) ---------- */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 24px;
+  background: #020617;
+  border-top: 1px solid #1f2937;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1 1 220px;
+}
+
+.footer-section h3 {
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  color: #e5e7eb;
+}
+
+.footer-section p,
+.footer-section a {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.footer-section a {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 4px;
+  transition: color 0.2s ease;
+}
+
+.footer-section a:hover {
+  color: #f9fafb;
+}
+
+/* ---------- Responsive Styles ---------- */
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* simple approach: hide links, show only logo + button */
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .navbar {
+    gap: 8px;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.4rem;
+  }
+
+  .container {
+    padding: 20px 12px 28px;
+  }
+}
